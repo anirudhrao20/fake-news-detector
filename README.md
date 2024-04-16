@@ -29,7 +29,7 @@ In this case study, I will analyze thousands of news text snippets to detect if 
 ## Architecture Overview
 ```mermaid
 graph LR;
-    News['News: Earth is about to explode!']-->NLP;
-    NLP['Fake News Detector: NLP Model']-->1['Real News: Label 1'];
-    NLP['Fake News Detector: NLP Model']-->0['Fake News: Label 0'];
+    News[News: Earth is about to explode!]-->NLP;
+    NLP[Fake News Detector: NLP Model]-->1[Real News: Label 1];
+    NLP[Fake News Detector: NLP Model]-->0[Fake News: Label 0];
 ```
