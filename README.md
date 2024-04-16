@@ -1,5 +1,5 @@
 # Fake News Detector
-In this project,I train a Long Short Term Memory (LSTM) network to detect fake news from a given news corpus. This project could be practically used by media companies to automatically predict whether the circulating news is fake or not. The process could be done automatically without having humans manually review thousands of news-related articles.
+In this project, I train a Long Short Term Memory (LSTM) network to detect fake news from a given news corpus. This project could be practically used by media companies to automatically predict whether the circulating news is fake or not. The process could be done automatically without having humans manually review thousands of news-related articles.
 
 Key Objectives:
  * Apply python libraries to import and visualize dataset
