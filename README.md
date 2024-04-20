@@ -33,3 +33,91 @@ graph LR;
     NLP[Fake News Detector: NLP Model]-->1[Real News: Label 1];
     NLP[Fake News Detector: NLP Model]-->0[Fake News: Label 0];
 ```
+
+---
+
+## Theory Behind Recurrent Neural Networks and LSTM
+### Recurrent Neural Networks (RNN): What are they?
+Feedforward Neural Networks (Vanilla Networks) map a fixed size input, like an image, to a fixed size output, such as
+classes or probabilities.
+
+A drawback of Feedforward Networks is that they do not have any time dependency or memory effects.
+
+An RNN is a type of ANN that is designed to take temporal dimension into consideration by having a memory 
+(internal state) (feedback loop).fc
+```mermaid
+---
+title: Feed Forward ANN
+---
+stateDiagram-v2
+    direction LR
+    input1: Input
+    input2: Input
+    input3: Input
+    hidden1: Hidden
+    hidden2: Hidden
+    hidden3: Hidden
+    hidden4: Hidden
+    output1: Output
+    output2: Output
+    
+    input1 --> hidden1
+    input1 --> hidden2
+    input1 --> hidden3
+    input1 --> hidden4
+    input2 --> hidden1
+    input2 --> hidden2
+    input2 --> hidden3
+    input2 --> hidden4
+    input3 --> hidden1
+    input3 --> hidden2
+    input3 --> hidden3
+    input3 --> hidden4
+    hidden1 --> output1
+    hidden1 --> output2
+    hidden2 --> output1
+    hidden2 --> output2
+    hidden3 --> output1
+    hidden3 --> output2
+    hidden4 --> output1
+    hidden4 --> output2
+```
+```mermaid
+---
+title: Recurrent Neural Network
+---
+stateDiagram-v2
+    direction LR
+    input1: Input
+    input2: Input
+    input3: Input
+    input4: Input
+    hidden1: Hidden
+    hidden2: Hidden
+    hidden3: Hidden
+    
+    input1 --> hidden1
+    input1 --> hidden2
+    input1 --> hidden3
+    input2 --> hidden1
+    input2 --> hidden2
+    input2 --> hidden3
+    input3 --> hidden1
+    input3 --> hidden2
+    input3 --> hidden3
+    input4 --> hidden1
+    input4 --> hidden2
+    input4 --> hidden3
+    hidden1 --> hidden1
+    hidden2 --> hidden2
+    hidden3 --> hidden3
+    hidden1 --> END1:::hidden
+    hidden2 --> END2:::hidden
+    hidden3 --> END3:::hidden
+```
+### RNN Architecture
+RNNs contain a temporal loop in which the hidden layer not only gives an output, but feeds itself as well.
+
+Time is added as an extra dimension.
+
+RNNs can recall what happened in the previous time stamp, so it works great with sequences of text.
